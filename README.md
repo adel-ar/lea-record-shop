@@ -317,9 +317,26 @@ queue/
 
 ## infra/database
 
-Configuração global de banco / TypeORM.
+Infraestrutura global de persistência e bootstrap de dados.
 
----
+```text
+database/
+├── database.module.ts
+├── database.config.ts
+├── customer.seed.ts
+├── catalog.seed.ts
+├── seed.runner.ts
+└── seed.module.ts
+```
+
+### Responsabilidades
+
+- Configuração global do TypeORM
+- Gerenciamento da conexão com banco
+- Execução de seeds de desenvolvimento
+- Bootstrap inicial de dados para ambiente local / avaliação técnica
+
+````
 
 ## infra/redis
 
@@ -389,11 +406,11 @@ Esta arquitetura foi escolhida para demonstrar capacidade de projetar sistemas a
 
 # Execução do Projeto
 
-## infrqa
+## Infra docker
 
 ```bash
     docker-compose up -d
-```
+````
 
 ## Setup
 
