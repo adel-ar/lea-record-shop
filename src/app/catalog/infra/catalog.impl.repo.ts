@@ -12,6 +12,11 @@ export class TypeOrmCatalogRepository implements CatalogRepository {
     @InjectRepository(CatalogEntity)
     private readonly repo: Repository<CatalogEntity>,
   ) {}
+  async saveMany(catalog: Catalog[]): Promise<Catalog[]> {
+    const persist = catalog.flatMap((x) => CatalogMapper.toPersistence(x));
+    const saved = await this.repo.save(persist);
+    return saved.flatMap((save) => CatalogMapper.toDomain(save));
+  }
   async findById(id: string) {
     const entity = await this.repo.findOne({ where: { id } });
     return entity ? CatalogMapper.toDomain(entity) : null;

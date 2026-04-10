@@ -12,6 +12,11 @@ export class TypeOrmCustomerRepository implements CustomerRepository {
     @InjectRepository(CustomerEntity)
     private readonly repo: Repository<CustomerEntity>,
   ) {}
+  async saveMany(customer: Customer[]): Promise<Customer[]> {
+    const persist = customer.flatMap((x) => CustomerMapper.toPersistence(x));
+    const saved = await this.repo.save(persist);
+    return saved.flatMap((save) => CustomerMapper.toDomain(save));
+  }
   async find(id: string) {
     const entity = await this.repo.findOne({ where: { id } });
     return entity ? CustomerMapper.toDomain(entity) : null;

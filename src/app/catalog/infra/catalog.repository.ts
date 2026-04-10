@@ -5,5 +5,5 @@ export abstract class CatalogRepository {
   // abstract findByEmail(email: string): Promise<Customer | null>;
   abstract persist(catalog: Catalog): Promise<Catalog>;
   abstract list(): Promise<Catalog[]>;
-  // abstract update(catalog: Catalog): Promise<Catalog>;
+  abstract saveMany(customer: Catalog[]): Promise<Catalog[]>;
 }

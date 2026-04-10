@@ -9,7 +9,7 @@ export class CatalogEntity {
   @Column()
   artist: string;
   @Column()
-  releaseYear: string;
+  releaseYear: number;
   @Column()
   style: string;
   @Column()

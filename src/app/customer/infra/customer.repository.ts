@@ -5,4 +5,5 @@ export abstract class CustomerRepository {
   abstract findByEmail(email: string): Promise<Customer | null>;
   abstract persiste(customer: Customer): Promise<Customer>;
   abstract list(): Promise<Customer[]>;
+  abstract saveMany(customer: Customer[]): Promise<Customer[]>;
 }

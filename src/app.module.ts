@@ -10,6 +10,7 @@ import { ProcessingModule } from './core/processing/processing.module';
 import { StockModule } from './app/stock/infra/stock.module';
 import { BullModule } from '@nestjs/bullmq';
 import { BullTaskQueue } from './core/queue/queue-bull.adapter';
+import { SeedModule } from './infra/database/seed.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -20,7 +21,7 @@ import { BullTaskQueue } from './core/queue/queue-bull.adapter';
     OrderModule,
     ProcessingModule,
     StockModule,
-
+    SeedModule,
     BullModule.forRoot({
       connection: {
         host: process.env.REDIS_HOST ?? 'localhost',

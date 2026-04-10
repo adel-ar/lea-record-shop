@@ -27,6 +27,24 @@ A estrutura foi projetada para:
 
 ---
 
+## Seed de Desenvolvimento
+
+O projeto suporta população automática de dados inicais para facilitar testes.
+
+Para habilitar:
+
+```env
+ENABLE_SEED=true
+```
+
+Ao iniciar a aplicação:
+
+- Clientes de teste serão criados
+- Itens de catálogo serão populados
+- Pedidos podem ser gerados via endpoint `/order/create`
+
+---
+
 # Estrutura de Pastas
 
 ```text
@@ -437,7 +455,7 @@ POST /order/create
 {
   "customerId": "3162b3d9-bf11-4c1e-9329-5646749cd025",
   "catalogId": "1b07636c-ab0f-46d1-8a4b-38766b3b0307",
-  "quantity": 7
+  "quantity": 1
 }
 ```
 

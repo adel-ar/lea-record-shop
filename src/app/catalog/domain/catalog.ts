@@ -5,7 +5,7 @@ export class Catalog {
     public readonly id: string,
     public readonly name: string,
     public readonly artist: string,
-    public readonly releaseYear: string,
+    public readonly releaseYear: number,
     public readonly style: string,
     public readonly quantity: number,
     public readonly price: Money,
@@ -14,7 +14,7 @@ export class Catalog {
   static create(params: {
     name: string;
     artist: string;
-    releaseYear: string;
+    releaseYear: number;
     style: string;
     quantity: number;
     price: number;
@@ -36,7 +36,7 @@ export class Catalog {
     id: string;
     name: string;
     artist: string;
-    releaseYear: string;
+    releaseYear: number;
     style: string;
     quantity: number;
     price: number;
