@@ -1,0 +1,15 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Usa Prettier como formatador padrão
+  "editor.formatOnSave": true, // Formata automaticamente ao salvar o arquivo
+  "editor.formatOnPaste": true, // Formata automaticamente ao colar código
+  "editor.formatOnType": true, // Formata enquanto digita
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
